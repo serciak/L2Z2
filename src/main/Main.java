@@ -18,11 +18,21 @@ public class Main {
                 ls.remove(temp2);
                 if(it2.hasNext())
                     temp2 = it2.next();
-            } else {
+            }
+            if(temp1.getIndex() < temp2.getIndex()) {
                 result.add(temp1);
                 ll.remove(temp1);
                 if(it1.hasNext())
                     temp1 = it1.next();
+            }
+            if(temp1.getIndex() == temp2.getIndex()) {
+                result.add(temp1);
+                ls.remove(temp2);
+                ll.remove(temp1);
+                if(it1.hasNext() && it2.hasNext()) {
+                    temp1 = it1.next();
+                    temp2 = it2.next();
+                }
             }
         }
 
